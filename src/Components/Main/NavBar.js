@@ -2,6 +2,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 const Container = styled.div`
+  font-family: var(--global-font);
   ${({ show }) =>
     show &&
     css`
@@ -84,8 +85,8 @@ export function NavBar() {
           </LogoContainer>
           <NavBarSection>
             <StyledNavLink to={'/회사소개'}>회사소개</StyledNavLink>
-            <StyledNavLink>서비스 안내</StyledNavLink>
-            <StyledNavLink>포트폴리오</StyledNavLink>
+            <StyledNavLink to={'/서비스-안내'}>서비스 안내</StyledNavLink>
+            <StyledNavLink to={'포트폴리오'}>포트폴리오</StyledNavLink>
             <StyledNavLink>칼럼</StyledNavLink>
             <StyledNavLink>가격안내</StyledNavLink>
             <StyledNavLink>문의하기</StyledNavLink>
