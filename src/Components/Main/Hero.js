@@ -21,7 +21,7 @@ const floatAnimation2 = keyframes`
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-30px);
+    transform: translateY(-40px);
   }
   100% {
     transform: translateY(0px);
@@ -37,6 +37,19 @@ const moveUpDown = keyframes`
 `;
 
 const Container = styled.div`
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    max-width: none;
+    background-image: url('https://i.pinimg.com/564x/b1/b8/78/b1b8789fbb006eb74c7ba365033da440.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -10;
+  }
   font-family: var(--global-font-bold);
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -95,7 +108,7 @@ const Container = styled.div`
   & .imageBox {
     position: relative;
     & .image1 {
-      width: 350px;
+      width: 100%;
       position: absolute;
       top: 0;
       left: 0;

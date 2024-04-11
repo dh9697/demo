@@ -1,24 +1,20 @@
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 const Container = styled.div`
   font-family: var(--global-font);
-  ${({ show }) =>
-    show &&
+  width: 100%;
+  ${({ isScrolled }) =>
+    isScrolled &&
     css`
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        max-width: none;
-        background-image: url('https://i.pinimg.com/564x/b1/b8/78/b1b8789fbb006eb74c7ba365033da440.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: -1;
-      }
+      position: sticky;
+      top: 0;
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      background-color: white;
+      max-width: none;
+      width: 100%;
     `}
 `;
 const ContainerInner = styled.div`
@@ -86,11 +82,24 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 export function NavBar() {
-  const location = useLocation();
-  const showBackground = location.pathname === '/';
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
-      <Container show={showBackground}>
+      <Container isScrolled={isScrolled}>
         <ContainerInner>
           <LogoContainer to={'/'}>
             <Logo></Logo>
@@ -109,6 +118,7 @@ export function NavBar() {
           </NavBarSection>
         </ContainerInner>
       </Container>
+
       <Outlet />
     </>
   );
