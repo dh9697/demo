@@ -40,33 +40,57 @@ const Container = styled.div`
   font-family: var(--global-font-bold);
   display: grid;
   grid-template-columns: 3fr 2fr;
-  margin-top: 6rem;
+  padding: 5rem 0;
+  height: calc(100vh - 92px);
   & p {
     font-size: 24px;
     font-weight: 900;
     font-family: var(--global-font);
-    padding-top: 5rem;
     padding-bottom: 3rem;
-    color: var(--global-color-white);
+    color: var(--global-color-text-soft);
   }
   & .texts {
     padding-bottom: 5rem;
+    transition: all linear;
+    line-height: 70px;
     & h1 {
       font-size: 54px;
       color: var(--global-color-text);
       & span {
         color: var(--global-color-white);
+        background-image: linear-gradient(
+          to right,
+          var(--global-color-purple) 0%,
+          var(--global-color-pink) 51%,
+          var(--global-color-purple) 100%
+        );
+        background-size: 200% auto;
       }
     }
   }
   & .scroll {
-    padding: 1rem 2rem;
-    background: linear-gradient(#e0bdf9, #f69aa8, #fba88d, #bddafc);
+    padding: 16px 40px 16px 40px;
+    color: var(--global-color-white);
+    background-image: linear-gradient(
+      to right,
+      var(--global-color-purple) 0%,
+      var(--global-color-pink) 51%,
+      var(--global-color-purple) 100%
+    );
+    background-size: 200% auto;
+    transition: 0.5s;
+    box-shadow: 0 0 20px 2px #eee;
+    border-radius: 5px;
     display: inline-block;
     font-size: 20px;
     font-weight: 900;
     animation: ${moveUpDown} 1.5s ease-in-out infinite;
     color: var(--global-color-white);
+    cursor: pointer;
+  }
+  & .scroll:hover {
+    background-position: right center;
+    text-decoration: none;
   }
   & .imageBox {
     position: relative;
@@ -109,19 +133,25 @@ export function Hero() {
         <div>
           <p>기획형 상세페이지 전문 에이전시 아피콕디자인</p>
           <div className="texts">
-            <h1 data-aos="fade-up" data-aos-easing="linear">
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-easing="linear"
+            >
               잘 기획된 상세페이지 하나,
             </h1>
             <h1
               data-aos="fade-up"
-              data-aos-delay="100"
+              data-aos-delay="200"
+              data-aos-duration="600"
               data-aos-easing="linear"
             >
               마케팅 비용의 <span>5배 수익이 나오는</span>
             </h1>
             <h1
               data-aos="fade-up"
-              data-aos-delay="200"
+              data-aos-delay="400"
+              data-aos-duration="600"
               data-aos-easing="linear"
             >
               ‘매출자판기’나 다름 없습니다.

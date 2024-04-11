@@ -11,10 +11,9 @@ const Container = styled.div`
         position: absolute;
         top: 0;
         left: 0;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         max-width: none;
-        margin-left: calc(-50vw + 50%);
         background-image: url('https://i.pinimg.com/564x/b1/b8/78/b1b8789fbb006eb74c7ba365033da440.jpg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -67,6 +66,23 @@ const StyledNavLink = styled(NavLink)`
   font-weight: 900;
   padding: 8px 16px;
   text-align: center;
+  &.inquire {
+    background-image: linear-gradient(
+      to right,
+      var(--global-color-purple) 0%,
+      var(--global-color-pink) 51%,
+      var(--global-color-purple) 100%
+    );
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+  }
+  &.inquire:hover {
+    background-position: right center;
+    color: var(--global-color-white);
+  }
 `;
 
 export function NavBar() {
@@ -89,7 +105,7 @@ export function NavBar() {
             <StyledNavLink to={'포트폴리오'}>포트폴리오</StyledNavLink>
             <StyledNavLink>칼럼</StyledNavLink>
             <StyledNavLink>가격안내</StyledNavLink>
-            <StyledNavLink>문의하기</StyledNavLink>
+            <StyledNavLink className="inquire">문의하기</StyledNavLink>
           </NavBarSection>
         </ContainerInner>
       </Container>

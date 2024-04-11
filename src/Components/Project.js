@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Hero } from './Main/Hero';
 import { NavBar } from './Main/NavBar';
 import { Desc } from './Page/Desc';
 import { Service } from './Page/Service';
 import { Portfolio } from './Page/Portfolio';
+import { MainPage } from './Page/MainPage';
 
 export function Project() {
   return (
@@ -11,7 +11,7 @@ export function Project() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<NavBar />}>
-            <Route path="/" element={<Hero />} />
+            <Route index element={<MainPage />} />
             <Route path="/회사소개" element={<Desc />}></Route>
             <Route path="/서비스-안내" element={<Service />}></Route>
             <Route path="/포트폴리오" element={<Portfolio />}></Route>
