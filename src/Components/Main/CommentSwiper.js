@@ -116,27 +116,42 @@ export function CommentSwiper() {
           >
             <StyledSwiperSlide>
               <figure>
-                <img src="https://i.pinimg.com/564x/1a/76/ad/1a76ad4102aeb9fcb6c314b43c9ceb2c.jpg" />
+                <img
+                  src="https://i.pinimg.com/564x/1a/76/ad/1a76ad4102aeb9fcb6c314b43c9ceb2c.jpg"
+                  alt="후기이미지"
+                />
               </figure>
             </StyledSwiperSlide>
             <StyledSwiperSlide>
               <figure>
-                <img src="https://i.pinimg.com/564x/a3/d6/0f/a3d60f312be8ba6141a31339b995f21f.jpg" />
+                <img
+                  src="https://i.pinimg.com/564x/a3/d6/0f/a3d60f312be8ba6141a31339b995f21f.jpg"
+                  alt="후기이미지"
+                />
               </figure>
             </StyledSwiperSlide>
             <StyledSwiperSlide>
               <figure>
-                <img src="https://i.pinimg.com/564x/d4/01/6b/d4016b47a6f7a27e4232a1a0a36eb2a6.jpg" />
+                <img
+                  src="https://i.pinimg.com/564x/d4/01/6b/d4016b47a6f7a27e4232a1a0a36eb2a6.jpg"
+                  alt="후기이미지"
+                />
               </figure>
             </StyledSwiperSlide>
             <StyledSwiperSlide>
               <figure>
-                <img src="https://i.pinimg.com/736x/cc/71/e5/cc71e5297349011a47cfae4d32986107.jpg" />
+                <img
+                  src="https://i.pinimg.com/736x/cc/71/e5/cc71e5297349011a47cfae4d32986107.jpg"
+                  alt="후기이미지"
+                />
               </figure>
             </StyledSwiperSlide>
             <StyledSwiperSlide>
               <figure>
-                <img src="https://i.pinimg.com/564x/c9/ed/66/c9ed66fa01eabbf3c519bf6dc1fae94a.jpg" />
+                <img
+                  src="https://i.pinimg.com/564x/c9/ed/66/c9ed66fa01eabbf3c519bf6dc1fae94a.jpg"
+                  alt="후기이미지"
+                />
               </figure>
             </StyledSwiperSlide>
           </StyledSwiper>
