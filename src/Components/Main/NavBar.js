@@ -59,7 +59,7 @@ const ContainerInner = styled.div`
       max-width: 1200px;
       margin: 0 auto;
       @media (max-width: 1200px) {
-        padding: 0.5rem 2rem;
+        padding: 0.7rem 2rem;
       }
     `}
 `;
@@ -160,7 +160,7 @@ const MenuBackground = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 10;
   animation: ${(props) =>
     props.isOpen

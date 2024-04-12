@@ -29,13 +29,35 @@ const Container = styled.div`
     font-family: var(--global-font-bold);
     text-align: center;
   }
+
+  @media (max-width: 767px) {
+    height: calc(100vh + 200px);
+    & .boxs {
+      flex-direction: column;
+      gap: 1rem;
+      & .box {
+        & .countTag {
+          padding: 5px 15px;
+          margin: 0.5rem 0;
+        }
+        & figure {
+          width: 75px;
+          height: 75px;
+        }
+      }
+    }
+  }
 `;
+
 const Boxs = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: red;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
   & .box {
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
     border-radius: 10px;
     box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -45,14 +67,14 @@ const Boxs = styled.div`
     & .countTag {
       padding: 10px 25px;
       margin: 1rem 0;
-      font-size: 1rem;
+      font-size: var(--global-typography-color-white-font-size);
       border-radius: 20px;
       background-color: var(--global-color-pink);
       color: white;
     }
     & .counting {
-      font-size: 60px;
-      padding: 0.5rem 0;
+      font-size: var(--global-typography-number-counting-font-size);
+      padding: 1rem 0;
     }
     & figure {
       width: 150px;
@@ -84,7 +106,7 @@ export function Count() {
             <h1>문의 폭주에는 다 이유가 있습니다.</h1>
           </div>
         </div>
-        <Boxs>
+        <Boxs className="boxs">
           <div className="box">
             <figure>
               <img src={count1} alt="작업건수 이미지" />
