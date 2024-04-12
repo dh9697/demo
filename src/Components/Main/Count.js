@@ -32,8 +32,9 @@ const Container = styled.div`
 `;
 const Boxs = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: red;
   & .box {
     border-radius: 10px;
     box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.1);

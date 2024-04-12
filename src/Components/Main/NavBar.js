@@ -204,10 +204,6 @@ export function NavBar() {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(true);
-  };
-
   return (
     <>
       <Container isScrolled={isScrolled}>
