@@ -53,10 +53,10 @@ const Container = styled.div`
   font-family: var(--global-font-bold);
   display: grid;
   grid-template-columns: 3fr 2fr;
-  padding: 5rem 0;
-  height: calc(100vh - 92px);
+  align-items: center;
+  height: calc(100vh - 82.39px);
   & p {
-    font-size: 24px;
+    font-size: var(--global-typography-color-text-soft-font-size);
     font-weight: 900;
     font-family: var(--global-font);
     padding-bottom: 3rem;
@@ -67,7 +67,7 @@ const Container = styled.div`
     transition: all linear;
     line-height: 70px;
     & h1 {
-      font-size: 54px;
+      font-size: var(--global-typography-color-text-font-size);
       color: var(--global-color-text);
       & span {
         color: var(--global-color-white);
@@ -95,7 +95,7 @@ const Container = styled.div`
     box-shadow: 0 0 20px 2px #eee;
     border-radius: 5px;
     display: inline-block;
-    font-size: 20px;
+    font-size: var(--global-typography-color-white-font-size);
     font-weight: 900;
     animation: ${moveUpDown} 1.5s ease-in-out infinite;
     color: var(--global-color-white);
@@ -107,10 +107,12 @@ const Container = styled.div`
   }
   & .imageBox {
     position: relative;
+    width: 100%;
+    height: 100%;
     & .image1 {
       width: 100%;
       position: absolute;
-      top: 0;
+      top: 10%;
       left: 0;
     }
     & .image2 {
@@ -118,6 +120,44 @@ const Container = styled.div`
       position: absolute;
       bottom: 0;
       right: 0;
+    }
+  }
+  @media (max-width: 1024px) {
+    & .texts {
+      line-height: 50px;
+    }
+    & .imageBox {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      & .image1 {
+        width: 100%;
+        position: absolute;
+        top: 20%;
+        left: 0;
+      }
+      & .image2 {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    text-align: center;
+    & p {
+      padding-bottom: 1rem;
+    }
+    & .texts {
+      padding-bottom: 1rem;
+    }
+    & .imageBox {
+      & .image1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
   }
 `;
@@ -170,7 +210,12 @@ export function Hero() {
               ‘매출자판기’나 다름 없습니다.
             </h1>
           </div>
-          <div className="scroll">
+          <div
+            className="scroll"
+            data-aos="fade-up"
+            data-aos-delay="600"
+            data-aos-easing="linear"
+          >
             자신감을 가진 이유? 3분만에 확인해보세요.
           </div>
         </div>

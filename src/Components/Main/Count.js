@@ -10,27 +10,33 @@ const Container = styled.div`
   align-items: center;
   font-family: var(--global-font);
   height: 100vh;
-  gap: 3rem;
+  gap: 2rem;
+  padding-top: 2rem;
+  & .texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
   & p {
-    font-size: 24px;
+    font-size: var(--global-typography-color-text-soft-font-size);
     font-weight: 900;
     color: var(--global-color-text-soft);
   }
   & h1 {
-    font-size: 50px;
-    text-align: center;
+    font-size: var(--global-typography-color-text-font-size);
     color: var(--global-color-text);
     font-family: var(--global-font-bold);
+    text-align: center;
   }
 `;
 const Boxs = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   & .box {
-    padding: 1rem 7rem;
     border-radius: 10px;
-    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,10 +70,18 @@ export function Count() {
   return (
     <>
       <Container>
-        <p>조기마감 주의!</p>
-        <div>
-          <h1>매달 조기 마감되는 T.O와</h1>
-          <h1>문의 폭주에는 다 이유가 있습니다.</h1>
+        <div
+          className="texts"
+          data-aos="fade-down"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="400"
+          data-aos-easing="linear"
+        >
+          <p>조기마감 주의!</p>
+          <div>
+            <h1>매달 조기 마감되는 T.O와</h1>
+            <h1>문의 폭주에는 다 이유가 있습니다.</h1>
+          </div>
         </div>
         <Boxs>
           <div className="box">
@@ -75,21 +89,27 @@ export function Count() {
               <img src={count1} alt="작업건수 이미지" />
             </figure>
             <p className="countTag">누적 작업건수</p>
-            <h1 className="counting">320+</h1>
+            <h1 className="counting">
+              320<span>+</span>
+            </h1>
           </div>
           <div className="box">
             <figure>
               <img src={count2} alt="고객만족도 이미지" />
             </figure>
             <p className="countTag">고객 만족도</p>
-            <h1 className="counting">98%</h1>
+            <h1 className="counting">
+              98<span>%</span>
+            </h1>
           </div>
           <div className="box">
             <figure>
               <img src={count3} alt="재구매율 이미지" />
             </figure>
             <p className="countTag">재구매율</p>
-            <h1 className="counting">92%</h1>
+            <h1 className="counting">
+              92<span>%</span>
+            </h1>
           </div>
         </Boxs>
       </Container>

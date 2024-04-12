@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
     --global-color-purple: #E0BDF9;
     --global-font-bold: Freesentation-9Black;
     --global-font : Pretendard-Regular;
+    --global-typography-color-text-soft-font-size: 24px;
+    --global-typography-color-text-font-size: 54px;
+    --global-typography-color-white-font-size: 20px;
 }
 *{
   padding: 0;
@@ -31,6 +34,30 @@ html, body {
     margin: 0 auto;
   }
 }
+@media (max-width: 1200px) {
+  body{
+    padding: 0 2rem;
+    transition: 0.5s linear;
+  }
+}
+
+@media (max-width: 1024px){
+  body{
+    --global-typography-color-text-soft-font-size: 16px;
+  --global-typography-color-text-font-size: 38px;
+  --global-typography-color-white-font-size: 18px;
+ 
+  }
+}
+@media (max-width: 767px){
+  body{
+    --global-typography-color-text-soft-font-size: 14px;
+  --global-typography-color-text-font-size: 30px;
+  --global-typography-color-white-font-size: 16px;
+ 
+  }
+}
+
 @font-face {
     font-family: 'Pretendard-Regular';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
