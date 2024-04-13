@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
+import { NavBarMenu } from './NavBarMenu';
 
 const slideDown = keyframes`
 from{
@@ -10,21 +11,6 @@ to{
   transform: translateY(0);
 }
 `;
-
-const slideIn = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
-const slideOut = keyframes`
-from{
-  transform: translateX(0);
-}to{
-  transform: translateX(100%);
-}`;
 const Container = styled.div`
   font-family: var(--global-font);
   width: 100%;
@@ -104,7 +90,6 @@ const Hamburger = styled.div`
       z-index: 100;
       width: 25px;
       height: 3px;
-      background-color: var(--global-color-text-soft);
       background-color: ${(props) =>
         props.isOpen
           ? 'var(--global-color-white)'
@@ -113,6 +98,7 @@ const Hamburger = styled.div`
       &:nth-child(1) {
         transform: ${(props) =>
           props.isOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'};
+        transform-origin: center;
       }
       &:nth-child(2) {
         opacity: ${(props) => (props.isOpen ? '0' : '1')};
@@ -120,6 +106,7 @@ const Hamburger = styled.div`
       &:nth-child(3) {
         transform: ${(props) =>
           props.isOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'};
+        transform-origin: center;
       }
     }
   }
@@ -153,37 +140,6 @@ const StyledNavLink = styled(NavLink)`
     background-position: right center;
     color: var(--global-color-white);
   }
-`;
-const MenuBackground = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 10;
-  animation: ${(props) =>
-    props.isOpen
-      ? css`
-          ${slideIn} 0.5s forwards
-        `
-      : css`
-          ${slideOut} 0.5s forwards
-        `};
-  & .menu {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--global-color-white);
-    gap: 3rem;
-  }
-`;
-const MenuLink = styled(NavLink)`
-  text-decoration: none;
-  color: var(--global-color-white);
-  font-size: 20px;
 `;
 
 export function NavBar() {
@@ -224,16 +180,6 @@ export function NavBar() {
               <span></span>
               <span></span>
             </div>
-            <MenuBackground isOpen={isMenuOpen}>
-              <div className="menu">
-                <MenuLink to={'/회사소개'}>회사소개</MenuLink>
-                <MenuLink to={'/서비스-안내'}>서비스 안내</MenuLink>
-                <MenuLink to={'포트폴리오'}>포트폴리오</MenuLink>
-                <MenuLink>칼럼</MenuLink>
-                <MenuLink>가격안내</MenuLink>
-                <MenuLink className="inquire">문의하기</MenuLink>
-              </div>
-            </MenuBackground>
           </Hamburger>
           <NavBarSection className="navBarSection">
             <StyledNavLink to={'/회사소개'}>회사소개</StyledNavLink>
@@ -244,6 +190,7 @@ export function NavBar() {
             <StyledNavLink className="inquire">문의하기</StyledNavLink>
           </NavBarSection>
         </ContainerInner>
+        <NavBarMenu isOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </Container>
       <Outlet />
     </>

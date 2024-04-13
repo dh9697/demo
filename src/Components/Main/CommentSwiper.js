@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -38,11 +38,6 @@ const Container = styled.div`
   & div {
     width: 100%;
   }
-  & .background {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    background-color: red;
-  }
 `;
 const StyledSwiper = styled(Swiper)`
   .swiper-slide {
@@ -72,10 +67,11 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     border: 5px solid var(--global-color-pink);
     border-radius: 5px;
     margin: 1rem 2rem 5rem;
+    object-fit: cover;
+    aspect-ratio: 5/6;
     overflow: hidden;
     & img {
       width: 100%;
-      object-fit: cover;
     }
   }
 `;
@@ -84,7 +80,6 @@ export function CommentSwiper() {
   return (
     <>
       <Container>
-        <div className="background"></div>
         <p
           data-aos="fade-down"
           data-aos-duration="400"
@@ -105,10 +100,14 @@ export function CommentSwiper() {
           data-aos-easing="linear"
         >
           <StyledSwiper
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Autoplay]}
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             breakpoints={{
               1024: { slidesPerView: 3 },
               767: { slidesPerView: 2 },
