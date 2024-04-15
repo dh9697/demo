@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NavBar } from './Main/NavBar';
-import { Desc } from './Page/Desc';
+import { Desc } from './Page/회사소개/Desc';
 import { Service } from './Page/Service';
 import { Portfolio } from './Page/Portfolio';
 import { MainPage } from './Page/MainPage';

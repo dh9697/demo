@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 import { NavBarMenu } from './NavBarMenu';
+import { Footer } from './Footer';
 
 const slideDown = keyframes`
 from{
@@ -60,7 +61,7 @@ const LogoContainer = styled(NavLink)`
     align-items: start;
     font-size: 1.5rem;
     font-weight: 900;
-    color: var(--global-color-primary);
+    color: var(--global-color-pink);
     letter-spacing: -1px;
     line-height: 20px;
     text-shadow: -1px -1px 0 var(--global-color-white),
@@ -69,7 +70,7 @@ const LogoContainer = styled(NavLink)`
   }
 `;
 const Logo = styled.div`
-  background-image: url('https://k.kakaocdn.net/dn/4mEzx/btsGqrWUkhI/qsPPalHDVQTpWgO0YKGO30/img_xl.jpg');
+  background-image: url('https://img.freepik.com/premium-vector/vector-graphic-of-abstract-flower-logo-nature-beauty-logo-desgn-template_600800-227.jpg?w=826');
   background-repeat: no-repeat;
   background-size: cover;
   width: 60px;
@@ -97,7 +98,7 @@ const Hamburger = styled.div`
       transition: transform 0.3s ease, opacity 0.3s ease;
       &:nth-child(1) {
         transform: ${(props) =>
-          props.isOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'};
+          props.isOpen ? 'rotate(45deg) translate(6px, 5px)' : 'none'};
         transform-origin: center;
       }
       &:nth-child(2) {
@@ -105,7 +106,7 @@ const Hamburger = styled.div`
       }
       &:nth-child(3) {
         transform: ${(props) =>
-          props.isOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'};
+          props.isOpen ? 'rotate(-45deg) translate(6px, -5px)' : 'none'};
         transform-origin: center;
       }
     }
@@ -167,7 +168,7 @@ export function NavBar() {
           <LogoContainer to={'/'}>
             <Logo></Logo>
             <div>
-              <p>Apkoc</p>
+              <p>Demo</p>
               <p>Design</p>
             </div>
           </LogoContainer>
@@ -193,6 +194,7 @@ export function NavBar() {
         <NavBarMenu isOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </Container>
       <Outlet />
+      <Footer />
     </>
   );
 }

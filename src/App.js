@@ -19,6 +19,9 @@ const GlobalStyle = createGlobalStyle`
     --global-typography-color-white-font-size: 20px;
     --global-typography-color-pink-font-size: 28px;
     --global-typography-number-counting-font-size: 60px;
+    --global-typography-small-font-size: 16px;
+    --global-typography-medium-font-size: 40px;
+    --global-typography-big-font-size: 72px;
 }
 *{
   padding: 0;
@@ -50,6 +53,10 @@ html, body {
     --global-typography-color-white-font-size: 18px;
     --global-typography-number-counting-font-size: 48px;
     --global-typography-color-pink-font-size: 24px;
+    --global-typography-small-font-size: 14px;
+    --global-typography-medium-font-size: 40px;
+    --global-typography-medium-font-size: 32px;
+    --global-typography-big-font-size: 44px;
   }
 }
 @media (max-width: 767px){
@@ -59,6 +66,9 @@ html, body {
     --global-typography-color-white-font-size: 16px;
     --global-typography-number-counting-font-size: 40px; 
     --global-typography-color-pink-font-size: 20px;
+    --global-typography-small-font-size: 12px;
+    --global-typography-medium-font-size: 26px;
+    --global-typography-big-font-size: 30px;
   }
 }
 
@@ -75,6 +85,7 @@ html, body {
     font-style: normal;
 }
 `;
+
 export default function App() {
   return (
     <>

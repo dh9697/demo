@@ -12,11 +12,10 @@ const Container = styled.div`
     content: '';
     position: absolute;
     top: 0;
-    left: 49%;
-    /* left: 50%; */
-    width: 100vw;
+    left: 50%;
+    width: calc(100vw - 17px);
+    transform: translateX(-50%);
     height: 100%;
-    margin-left: -50vw;
     z-index: -10;
     background-color: var(--global-color-text);
   }
@@ -40,12 +39,11 @@ const Container = styled.div`
   }
 `;
 const StyledSwiper = styled(Swiper)`
-  .swiper-slide {
-  }
   .swiper-button-next,
   .swiper-button-prev {
     color: var(--global-color-white);
     width: 0;
+    top: 45%;
     font-weight: 900;
     &:after {
       font-size: 20px;

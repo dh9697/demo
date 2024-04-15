@@ -175,7 +175,7 @@ const AnimatedImage = styled.img`
   }
 `;
 
-export function Hero() {
+export function Hero({ scrollToCount }) {
   useEffect(() => {
     Aos.init();
   }, []);
@@ -184,7 +184,7 @@ export function Hero() {
     <>
       <Container>
         <div>
-          <p>기획형 상세페이지 전문 에이전시 아피콕디자인</p>
+          <p>기획형 상세페이지 전문 에이전시 데모디자인</p>
           <div className="texts">
             <h1
               data-aos="fade-up"
@@ -215,6 +215,7 @@ export function Hero() {
             data-aos="fade-up"
             data-aos-delay="600"
             data-aos-easing="linear"
+            onClick={scrollToCount}
           >
             자신감을 가진 이유? 3분만에 확인해보세요.
           </div>
