@@ -77,7 +77,7 @@ const Container = styled.div`
   }
 `;
 
-export function DescHero() {
+export function DescHero({ scrollToDescContent1 }) {
   return (
     <>
       <Container>
@@ -108,7 +108,7 @@ export function DescHero() {
             대표님들께서 여기서 상세페이지 만든 제품은 어떻게 매번 잘
             팔리는거냐며 놀리시는 이유입니다.
           </p>
-          <div className="scroll">
+          <div className="scroll" onClick={scrollToDescContent1}>
             <p>주문 폭주하는 상세페이지의 비결이 궁금하신가요?</p>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import Aos from 'aos';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 const Container = styled.div`
   color: var(--global-color-text);
@@ -26,8 +28,8 @@ const Container = styled.div`
     }
   }
   & .border {
-    border: 5px solid var(--global-color-pink);
-    border-radius: 5px;
+    border: 10px solid var(--global-color-pink);
+    border-radius: 10px;
     background-color: var(--global-color-text);
     width: 100%;
     height: 100%;
@@ -41,14 +43,45 @@ const Container = styled.div`
       }
     }
   }
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+    & .border {
+      padding: 10% 0;
+      & figure {
+        width: 200px;
+        & img {
+          width: 100%;
+        }
+      }
+    }
+  }
 `;
 export function DescContent1() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <>
       <Container>
         <div>
-          <h3>유통 브랜드를 직접 운영하며 생각했습니다.</h3>
-          <h1>왜 상세페이지를 그렇게 밖에 못만들까?</h1>
+          <h3
+            data-aos="fade-down"
+            data-aos-duration="400"
+            data-aos-easing="linear"
+          >
+            유통 브랜드를 직접 운영하며 생각했습니다.
+          </h3>
+          <h1
+            data-aos="fade-down"
+            data-aos-duration="400"
+            data-aos-easing="linear"
+          >
+            왜 상세페이지를 그렇게 밖에 못만들까?
+          </h1>
           <div className="textsBox">
             <p>
               <strong>안녕하세요 대표님, 데모디자인 대표 아무개입니다.</strong>

@@ -22,6 +22,9 @@ const Container = styled.div`
       & span {
         color: var(--global-color-pink);
       }
+      @media (max-width: 767px) {
+        text-align: center;
+      }
     }
   }
   & .containerInner {
@@ -41,13 +44,15 @@ const Container = styled.div`
         gap: 1rem;
         margin: 0 0.5rem;
         & figure {
-          width: 400px;
+          width: 350px;
           border: 5px solid var(--global-color-pink);
           border-radius: 5px;
           @media (max-width: 1024px) {
             width: 300px;
           }
-
+          @media (max-width: 1024px) {
+            width: 250px;
+          }
           & img {
             width: 100%;
             height: 100%;

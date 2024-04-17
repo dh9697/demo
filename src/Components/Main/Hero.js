@@ -1,9 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import heart1 from '../../image/heart1.png';
 import heart2 from '../../image/heart2.png';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 
 const floatAnimation = keyframes`
   0% {
@@ -176,10 +173,6 @@ const AnimatedImage = styled.img`
 `;
 
 export function Hero({ scrollToCount }) {
-  useEffect(() => {
-    Aos.init();
-  }, []);
-
   return (
     <>
       <Container>

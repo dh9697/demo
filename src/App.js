@@ -32,6 +32,8 @@ const GlobalStyle = createGlobalStyle`
 html, body {
   width: 100%;
   height: 100%;
+  color: var(--global-color-text);
+  font-family: var(--global-font);
 }
 @media (min-width: 1200px) {
   body {
