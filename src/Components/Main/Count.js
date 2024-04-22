@@ -91,37 +91,37 @@ const Boxs = styled.div`
   }
 `;
 export function Count() {
-  const [counts, setCounts] = useState([0, 0, 0]);
+  // const [counts, setCounts] = useState([0, 0, 0]);
 
-  const targets = [320, 98, 92];
-  const maxCountTime = 1500;
+  // const targets = [320, 98, 92];
+  // const maxCountTime = 1500;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCounts((currentCounts) => {
-        return currentCounts.map((count, index) => {
-          const increment = Math.ceil(targets[index] / (maxCountTime / 10));
-          const newCount = count + increment;
-          return newCount > targets[index] ? targets[index] : newCount;
-        });
-      });
-    }, 10);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCounts((currentCounts) => {
+  //       return currentCounts.map((count, index) => {
+  //         const increment = Math.ceil(targets[index] / (maxCountTime / 10));
+  //         const newCount = count + increment;
+  //         return newCount > targets[index] ? targets[index] : newCount;
+  //       });
+  //     });
+  //   }, 10);
 
-    const checkIfDone = setInterval(() => {
-      setCounts((currentCounts) => {
-        if (currentCounts.every((count, index) => count >= targets[index])) {
-          clearInterval(interval);
-          clearInterval(checkIfDone);
-        }
-        return currentCounts;
-      });
-    }, 10);
+  //   const checkIfDone = setInterval(() => {
+  //     setCounts((currentCounts) => {
+  //       if (currentCounts.every((count, index) => count >= targets[index])) {
+  //         clearInterval(interval);
+  //         clearInterval(checkIfDone);
+  //       }
+  //       return currentCounts;
+  //     });
+  //   }, 10);
 
-    return () => {
-      clearInterval(interval);
-      clearInterval(checkIfDone);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(interval);
+  //     clearInterval(checkIfDone);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -146,7 +146,7 @@ export function Count() {
             </figure>
             <p className="countTag">누적 작업건수</p>
             <h1 className="counting">
-              {counts[0]}
+              {/* {counts[0]} */}320
               <span>+</span>
             </h1>
           </div>
@@ -156,7 +156,7 @@ export function Count() {
             </figure>
             <p className="countTag">고객 만족도</p>
             <h1 className="counting">
-              {counts[1]}
+              {/* {counts[1]} */}98
               <span>%</span>
             </h1>
           </div>
@@ -166,7 +166,7 @@ export function Count() {
             </figure>
             <p className="countTag">재구매율</p>
             <h1 className="counting">
-              {counts[2]}
+              {/* {counts[2]} */}92
               <span>%</span>
             </h1>
           </div>
