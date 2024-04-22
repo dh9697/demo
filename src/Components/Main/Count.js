@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import count1 from '../../image/count1.png';
 import count2 from '../../image/count2.png';
 import count3 from '../../image/count3.png';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 const Container = styled.div`
   display: flex;
