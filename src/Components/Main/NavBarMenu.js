@@ -54,9 +54,20 @@ export function NavBarMenu({ isOpen, setIsMenuOpen }) {
             <MenuLink to={'포트폴리오'} onClick={handleCloseMenu}>
               포트폴리오
             </MenuLink>
-            <MenuLink onClick={handleCloseMenu}>칼럼</MenuLink>
-            <MenuLink onClick={handleCloseMenu}>가격안내</MenuLink>
-            <MenuLink onClick={handleCloseMenu} className="inquire">
+            <MenuLink to={'전문칼럼'} onClick={handleCloseMenu}>
+              칼럼
+            </MenuLink>
+            <MenuLink
+              to={'가격안내/기획형-상세페이지'}
+              onClick={handleCloseMenu}
+            >
+              가격안내
+            </MenuLink>
+            <MenuLink
+              to={'문의하기'}
+              onClick={handleCloseMenu}
+              className="inquire"
+            >
               문의하기
             </MenuLink>
           </div>

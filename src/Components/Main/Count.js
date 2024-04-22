@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import count1 from '../../image/count1.png';
 import count2 from '../../image/count2.png';
 import count3 from '../../image/count3.png';
+import { useEffect, useState } from 'react';
 
 const Container = styled.div`
   display: flex;
@@ -90,6 +91,38 @@ const Boxs = styled.div`
   }
 `;
 export function Count() {
+  const [counts, setCounts] = useState([0, 0, 0]);
+
+  const targets = [320, 98, 92];
+  const maxCountTime = 1500;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounts((currentCounts) => {
+        return currentCounts.map((count, index) => {
+          const increment = Math.ceil(targets[index] / (maxCountTime / 10));
+          const newCount = count + increment;
+          return newCount > targets[index] ? targets[index] : newCount;
+        });
+      });
+    }, 10);
+
+    const checkIfDone = setInterval(() => {
+      setCounts((currentCounts) => {
+        if (currentCounts.every((count, index) => count >= targets[index])) {
+          clearInterval(interval);
+          clearInterval(checkIfDone);
+        }
+        return currentCounts;
+      });
+    }, 10);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(checkIfDone);
+    };
+  }, []);
+
   return (
     <>
       <Container>
@@ -113,7 +146,8 @@ export function Count() {
             </figure>
             <p className="countTag">누적 작업건수</p>
             <h1 className="counting">
-              320<span>+</span>
+              {counts[0]}
+              <span>+</span>
             </h1>
           </div>
           <div className="box">
@@ -122,7 +156,8 @@ export function Count() {
             </figure>
             <p className="countTag">고객 만족도</p>
             <h1 className="counting">
-              98<span>%</span>
+              {counts[1]}
+              <span>%</span>
             </h1>
           </div>
           <div className="box">
@@ -131,7 +166,8 @@ export function Count() {
             </figure>
             <p className="countTag">재구매율</p>
             <h1 className="counting">
-              92<span>%</span>
+              {counts[2]}
+              <span>%</span>
             </h1>
           </div>
         </Boxs>

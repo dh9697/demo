@@ -185,10 +185,14 @@ export function NavBar() {
           <NavBarSection className="navBarSection">
             <StyledNavLink to={'/회사소개'}>회사소개</StyledNavLink>
             <StyledNavLink to={'/서비스-안내'}>서비스 안내</StyledNavLink>
-            <StyledNavLink to={'포트폴리오'}>포트폴리오</StyledNavLink>
-            <StyledNavLink>칼럼</StyledNavLink>
-            <StyledNavLink>가격안내</StyledNavLink>
-            <StyledNavLink className="inquire">문의하기</StyledNavLink>
+            <StyledNavLink to={'/포트폴리오'}>포트폴리오</StyledNavLink>
+            <StyledNavLink to={'/전문칼럼'}>칼럼</StyledNavLink>
+            <StyledNavLink to={'/가격안내/기획형-상세페이지'}>
+              가격안내
+            </StyledNavLink>
+            <StyledNavLink to={'/문의하기'} className="inquire">
+              문의하기
+            </StyledNavLink>
           </NavBarSection>
         </ContainerInner>
         <NavBarMenu isOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
