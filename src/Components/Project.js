@@ -23,17 +23,20 @@ export function Project() {
         <Routes>
           <Route path="/" element={<NavBar />}>
             <Route index element={<MainPage />} />
-            <Route path="회사소개" element={<Desc />}></Route>
-            <Route path="서비스-안내" element={<Service />}></Route>
-            <Route path="포트폴리오" element={<Portfolio />}></Route>
-            <Route path="전문칼럼" element={<Column />}></Route>
-            <Route path="title에-따라" element={<ColumnContent />} />
+            <Route path="/회사소개" element={<Desc />}></Route>
+            <Route path="/서비스-안내" element={<Service />}></Route>
+            <Route path="/포트폴리오" element={<Portfolio />}></Route>
+            <Route path="/전문칼럼" element={<Column />}></Route>
+            <Route path="/title에-따라" element={<ColumnContent />} />
             <Route
-              path="가격안내/기획형-상세페이지"
+              path="/가격안내/기획형-상세페이지"
               element={<PricingInformation />}
             ></Route>
-            <Route path="가격안내/올인원-상세페이지"></Route>
-            <Route path="문의하기" element={<Inquire />}></Route>
+            <Route
+              path="/가격안내/올인원-상세페이지"
+              element={<PricingInformation />}
+            ></Route>
+            <Route path="/문의하기" element={<Inquire />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

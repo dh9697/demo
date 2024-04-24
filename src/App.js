@@ -7,8 +7,11 @@ const GlobalStyle = createGlobalStyle`
     --global-color-secondary: #ED7700;
     --global-color-text: #292524;
     --global-color-text-soft: #454545;
+    --global-color-gray: #78716c;
+    --global-color-lightgray: #999999;
     --global-color-white: #f3f3f3;
     --global-color-pink: #F69AA8;
+    --global-color-lightpink: #f7e1e4;
     --global-color-orange: #FBA88D;
     --global-color-sky: #BDDAFC;
     --global-color-purple: #E0BDF9;
